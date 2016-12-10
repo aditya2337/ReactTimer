@@ -6,15 +6,6 @@ module.exports = {
     'script!foundation-sites/dist/foundation.min.js',
     './app/app.jsx'
   ],
-  externals : {
-    jquery : 'jQuery'
-  },
-  pligins : [
-    new webpack.ProvidePlugin({
-      '$' : 'jquery',
-      'jQuery' : 'jquery'
-    })
-  ],
   output : {
     path : __dirname,
     filename : './public/bundle.js'
@@ -27,6 +18,7 @@ module.exports = {
       Navigation : 'app/components/Navigation.jsx',
       Timer : 'app/components/Timer.jsx',
       Countdown : 'app/components/Countdown.jsx',
+      Clock : 'app/components/Clock.jsx',
     },
     extensions : ['', '.js', '.jsx']
   },
@@ -38,9 +30,9 @@ module.exports = {
           presets : ['react', 'es2015', 'stage-0']
         },
         test : /\.jsx?$/,
-        exclude : /(node_modules|bowercomponents)/
+        exclude : /(node_modules|bower_components)/
       }
     ]
   },
   devtool : 'source-map'
-}
+};
