@@ -24964,6 +24964,10 @@
 	      }
 	    }
 	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    clearInterval(this.timer);
+	    this.timer = undefined;
+	  },
 	  startTimer: function startTimer() {
 	    var _this = this;
 	
@@ -24972,6 +24976,10 @@
 	      _this.setState({
 	        count: newCount >= 0 ? newCount : 0
 	      });
+	
+	      if (newCount === 0) {
+	        _this.setState({ countdownStatus: 'stopped' });
+	      }
 	    }, 1000);
 	  },
 	  handleSetCountDown: function handleSetCountDown(seconds) {
