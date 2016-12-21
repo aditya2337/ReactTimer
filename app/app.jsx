@@ -7,11 +7,10 @@ var Main = require('Main'),
     Countdown = require('Countdown');
 
 // Load foundation
-require('style!css!foundation-sites/dist/foundation.min.css')
+$(document).foundation();
 
 // app css
 require('style!css!sass!applicationStyles')
-$(document).foundation();
 
 ReactDOM.render(
   <Router history = {hashHistory}>
